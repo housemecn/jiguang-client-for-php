@@ -30,7 +30,7 @@ class Client extends BaseClient
      *
      * @param $registration_id
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      * @throws InvalidConfigException
      * @throws GuzzleException
      */
@@ -50,7 +50,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function updateDevices($registration_id, $options)
     {
@@ -68,7 +68,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function getAliases($alias_value, array $platform = ['platform ' => 'all'])
     {
@@ -86,7 +86,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function deleteAliases($alias_value, array $platform = ['platform ' => 'all'])
     {
@@ -104,7 +104,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function removeAliases($alias_value, $options)
     {
@@ -119,7 +119,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function getTags()
     {
@@ -134,7 +134,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function isDeviceInTag(string $tag_value, string $registration_id)
     {
@@ -149,7 +149,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function updateTag(string $tag_value, array $options)
     {
@@ -166,7 +166,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function deleteTag(string $tag_value, array $platform = ['platform ' => 'all'])
     {
@@ -181,7 +181,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function status(array $options)
     {

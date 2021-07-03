@@ -31,7 +31,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function addSchedules($options)
     {
@@ -47,7 +47,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function getSchedules(int $page = 1, array $query = ['page' => $page])
     {
@@ -57,16 +57,16 @@ class Client extends BaseClient
     /**
      * 获取指定的定时任务
      *
-     * @param $schedule_id
+     * @param $scheduleID
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
-    public function getSchedulesById($schedule_id)
+    public function getSchedulesById($scheduleID)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $schedule_id);
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $scheduleID);
 
         return $this->httpGet($url, [], $this->getHeader());
     }
@@ -74,16 +74,16 @@ class Client extends BaseClient
     /**
      * 获取定时任务对应的所有 msg_id.
      *
-     * @param $schedule_id
+     * @param $scheduleID
      *
-     * @throws GuzzleException
+     * @return array|Collection|object|ResponseInterface
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @throws GuzzleException
      */
-    public function getMsgId($schedule_id)
+    public function getMsgId($scheduleID)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $schedule_id.'/msg_ids');
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $scheduleID.'/msg_ids');
 
         return $this->httpGet($url, [], $this->getHeader());
     }
@@ -91,17 +91,17 @@ class Client extends BaseClient
     /**
      *  修改指定的 Schedule.
      *
-     * @param $schedule_id
+     * @param $scheduleID
      * @param $options
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
-    public function updateSchedules($schedule_id, $options)
+    public function updateSchedules($scheduleID, $options)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $schedule_id);
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $scheduleID);
 
         return $this->httpPut($url, $options, $this->getHeader());
     }
@@ -109,16 +109,16 @@ class Client extends BaseClient
     /**
      * 删除指定的 Schedule 任务
      *
-     * @param $schedule_id
+     * @param $scheduleID
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
-    public function deleteSchedules($schedule_id)
+    public function deleteSchedules($scheduleID)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $schedule_id);
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $scheduleID);
 
         return $this->httpDelete($url, $this->getHeader());
     }

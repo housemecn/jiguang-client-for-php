@@ -46,7 +46,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function getCid(array $query)
     {
@@ -65,7 +65,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function validate(array $options)
     {
@@ -80,7 +80,7 @@ class Client extends BaseClient
      * @throws InvalidConfigException
      * @throws GuzzleException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function batchRegidSingle(array $options)
     {
@@ -95,7 +95,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function batchAliasSingle(array $options)
     {
@@ -112,7 +112,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function revoke($msgID)
     {
@@ -127,7 +127,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function file(array $options)
     {
@@ -142,7 +142,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function groupPush(array $options)
     {
@@ -157,7 +157,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function groupPushFile(array $options)
     {

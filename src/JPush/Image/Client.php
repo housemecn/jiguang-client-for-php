@@ -29,7 +29,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function createByUrls(array $options)
     {
@@ -44,7 +44,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function createByFiles(array $options)
     {
@@ -59,7 +59,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function updateByUrls(string $mediaId, array $options)
     {
@@ -74,7 +74,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function updateByFiles(string $mediaId, array $options)
     {

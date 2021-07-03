@@ -31,7 +31,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function createApp($options)
     {
@@ -44,7 +44,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function deleteApp(string $appKey)
     {
@@ -59,7 +59,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function uploadCertificate(string $appKey, array $options)
     {

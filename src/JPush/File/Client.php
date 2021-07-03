@@ -30,7 +30,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function files(string $type, $path)
     {
@@ -45,7 +45,7 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function getFiles()
     {
@@ -58,11 +58,11 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
-    public function deleteFiles(string $file_id)
+    public function deleteFiles(string $fileID)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $file_id);
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $fileID);
 
         return $this->httpDelete($url, $this->getHeader());
     }
@@ -73,11 +73,11 @@ class Client extends BaseClient
      *@throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
-    public function getFilesById(string $file_id)
+    public function getFilesById(string $fileID)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $file_id);
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, $fileID);
 
         return $this->httpGet($url, [], $this->getHeader());
     }

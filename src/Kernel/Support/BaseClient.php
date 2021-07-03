@@ -55,7 +55,7 @@ abstract class BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     protected function httpGet(string $url, array $query, array $headers)
     {
@@ -85,7 +85,7 @@ abstract class BaseClient
      * @param string $url
      * @param array $headers
      * @param array $query
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      * @throws InvalidConfigException
      * @throws GuzzleException
      */
@@ -107,7 +107,7 @@ abstract class BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     protected function httpPostJson(string $url, array $data, array $headers)
     {
@@ -120,7 +120,7 @@ abstract class BaseClient
      * @param  array   $data
      * @param  array   $headers
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
@@ -138,7 +138,7 @@ abstract class BaseClient
      * @param  array   $headers
      * @param  array   $form
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
@@ -169,7 +169,7 @@ abstract class BaseClient
      * @param  array   $options
      * @param  false   $returnRaw
      *
-     * @return array|Collection|string|object|ResponseInterface
+     * @return array|Collection|object|ResponseInterface
      * @throws GuzzleException
      * @throws InvalidConfigException
      */

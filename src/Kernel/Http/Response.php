@@ -36,7 +36,7 @@ class Response extends GuzzleResponse
     /**
      * @param ResponseInterface $response
      *
-     * @return \EasyJiGuang\Kernel\Http\Response
+     * @return Response
      */
     public static function buildFromPsrResponse(ResponseInterface $response): Response
     {
@@ -84,7 +84,7 @@ class Response extends GuzzleResponse
     /**
      * Get collection data.
      *
-     * @return \EasyJiGuang\Kernel\Support\Collection
+     * @return Collection
      */
     public function toCollection(): Collection
     {
@@ -100,7 +100,7 @@ class Response extends GuzzleResponse
     }
 
     /**
-     * @return bool|string
+     * @return string
      */
     public function __toString()
     {

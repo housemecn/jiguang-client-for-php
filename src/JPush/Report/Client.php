@@ -31,7 +31,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function received(array $query)
     {
@@ -49,7 +49,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function status(array $options)
     {
@@ -64,7 +64,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function detail(array $query)
     {
@@ -79,7 +79,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function users(array $query)
     {
@@ -94,7 +94,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function groupDetail(array $query)
     {
@@ -109,7 +109,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function groupUsers(array $query)
     {

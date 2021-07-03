@@ -1,12 +1,17 @@
-<h1 align="center"> JiGuang Push</h1>
+# JiGuang Push
 
-<p align="center"> 极光 API Server SDK for PHP.</p>
+### 极光 API Server SDK for PHP.
 
 
 [![Latest Stable Version](https://poser.pugx.org/houseme/easyjiguang/v)](//packagist.org/packages/houseme/easyjiguang)
 [![Total Downloads](https://poser.pugx.org/houseme/easyjiguang/downloads)](//packagist.org/packages/houseme/easyjiguang)
 [![Latest Unstable Version](https://poser.pugx.org/houseme/easyjiguang/v/unstable)](//packagist.org/packages/houseme/easyjiguang)
 [![License](https://poser.pugx.org/houseme/easyjiguang/license)](//packagist.org/packages/houseme/easyjiguang)
+![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/houseme/easyjiguang)
+![Packagist Version](https://img.shields.io/packagist/v/houseme/easyjiguang)
+
+
+
 
 > 如需友盟推送 请前往 [友盟推送](https://github.com/hedeqiang/UMeng-Push)
 

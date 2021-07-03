@@ -54,15 +54,15 @@ class Client extends BaseClient
     /**
      * 验证码验证 API.
      *
-     * @param string $msg_id
+     * @param string $msgID
      * @param string $code
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
-    public function validator(string $msg_id, string $code)
+    public function validator(string $msgID, string $code)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "codes/$msg_id/valid");
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "codes/$msgID/valid");
 
         $this->httpPostJson($url, ['code' => $code], $this->getHeader());
     }
@@ -130,15 +130,15 @@ class Client extends BaseClient
     /**
      * 单条定时短信修改 API.
      *
-     * @param string $schedule_id
+     * @param string $scheduleID
      * @param array  $options
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
-    public function updateSchedule(string $schedule_id, array $options)
+    public function updateSchedule(string $scheduleID, array $options)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "schedule/$schedule_id");
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "schedule/$scheduleID");
 
         $this->httpPut($url, $options, $this->getHeader());
     }
@@ -146,15 +146,15 @@ class Client extends BaseClient
     /**
      * 批量定时短信修改 API.
      *
-     * @param string $schedule_id
+     * @param string $scheduleID
      * @param array  $options
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
-    public function updateBatchSchedule(string $schedule_id, array $options)
+    public function updateBatchSchedule(string $scheduleID, array $options)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "schedule/batch/$schedule_id");
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "schedule/batch/$scheduleID");
 
         $this->httpPut($url, $options, $this->getHeader());
     }
@@ -162,14 +162,14 @@ class Client extends BaseClient
     /**
      * 定时短信查询API.
      *
-     * @param string $schedule_id
+     * @param string $scheduleID
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
-    public function get(string $schedule_id)
+    public function get(string $scheduleID)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "schedule/$schedule_id");
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "schedule/$scheduleID");
 
         $this->httpGet($url, [], $this->getHeader());
     }
@@ -177,14 +177,14 @@ class Client extends BaseClient
     /**
      * 定时短信删除 API.
      *
-     * @param string $schedule_id
+     * @param string $scheduleID
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
-    public function delete(string $schedule_id)
+    public function delete(string $scheduleID)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "schedule/$schedule_id");
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, "schedule/$scheduleID");
 
         $this->httpDelete($url, $this->getHeader());
     }

@@ -29,7 +29,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function verify(array $options, string $type = 'Android、iOS')
     {
@@ -58,7 +58,7 @@ class Client extends BaseClient
      * @throws GuzzleException
      * @throws InvalidConfigException
      *
-     * @return array|Collection|object|ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface
      */
     public function loginTokenVerify(string $loginToken, $exID)
     {
