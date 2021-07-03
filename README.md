@@ -7,8 +7,8 @@
 [![Total Downloads](https://poser.pugx.org/houseme/easyjiguang/downloads)](//packagist.org/packages/houseme/easyjiguang)
 [![Latest Unstable Version](https://poser.pugx.org/houseme/easyjiguang/v/unstable)](//packagist.org/packages/houseme/easyjiguang)
 [![License](https://poser.pugx.org/houseme/easyjiguang/license)](//packagist.org/packages/houseme/easyjiguang)
-![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/houseme/easyjiguang)
-![Packagist Version](https://img.shields.io/packagist/v/houseme/easyjiguang)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/houseme/easyjiguang)](//packagist.org/packages/houseme/easyjiguang)
+[![Packagist Version](https://img.shields.io/packagist/v/houseme/easyjiguang)](//packagist.org/packages/houseme/easyjiguang)
 
 
 
