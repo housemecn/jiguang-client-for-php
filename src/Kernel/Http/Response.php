@@ -21,6 +21,9 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Response extends GuzzleResponse
 {
+    /****
+     * @return string
+     */
     public function getBodyContents(): string
     {
         $this->getBody()->rewind();
@@ -65,7 +68,7 @@ class Response extends GuzzleResponse
     {
         $content = $this->removeControlCharacters($this->getBodyContents());
 
-        if (false !== stripos($this->getHeaderLine('Content-Type'), 'xml') || 0 === stripos($content, '<xml')) {
+        if (0 === stripos($content, '<xml') || false !== stripos($this->getHeaderLine('Content-Type'), 'xml')) {
             return XML::parse($content);
         }
 

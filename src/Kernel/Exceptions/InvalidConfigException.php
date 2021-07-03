@@ -11,6 +11,11 @@
 
 namespace EasyJiGuang\Kernel\Exceptions;
 
-class InvalidConfigException extends Exception
+/****
+ * Class InvalidConfigException
+ *
+ * @package EasyJiGuang\Kernel\Exceptions
+ */
+class InvalidConfigException extends EasyJiGuangException
 {
 }

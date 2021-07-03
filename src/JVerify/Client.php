@@ -11,7 +11,11 @@
 
 namespace EasyJiGuang\JVerify;
 
+use EasyJiGuang\Kernel\Exceptions\InvalidConfigException;
 use EasyJiGuang\Kernel\Support\BaseClient;
+use EasyJiGuang\Kernel\Support\Collection;
+use GuzzleHttp\Exception\GuzzleException;
+use Psr\Http\Message\ResponseInterface;
 
 class Client extends BaseClient
 {
@@ -22,10 +26,10 @@ class Client extends BaseClient
     /**
      * 号码认证
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function verify(array $options, string $type = 'Android、iOS')
     {
@@ -48,12 +52,13 @@ class Client extends BaseClient
     /**
      * 一键登录.
      *
-     * @param $exID
+     * @param string $loginToken
+     * @param        $exID
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function loginTokenVerify(string $loginToken, $exID)
     {
@@ -69,7 +74,7 @@ class Client extends BaseClient
     /**
      * 解密手机号.
      *
-     * @param $encrypted
+     * @param string $encrypted
      *
      * @return string[]
      */
@@ -77,12 +82,9 @@ class Client extends BaseClient
     {
         $prefix = '-----BEGIN RSA PRIVATE KEY-----';
         $suffix = '-----END RSA PRIVATE KEY-----';
-        $result = '';
 
-        $prikey = $this->config->get('priKey');
-
-        $key = $prefix."\n".$prikey."\n".$suffix;
-        $r = openssl_private_decrypt(base64_decode($encrypted), $result, openssl_pkey_get_private($key));
+        $key = $prefix."\n".$this->config->get('priKey')."\n".$suffix;
+        $result = openssl_private_decrypt(base64_decode($encrypted), $result, openssl_pkey_get_private($key));
 
         return ['phone' => $result];
     }

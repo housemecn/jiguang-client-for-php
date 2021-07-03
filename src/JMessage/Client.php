@@ -11,7 +11,9 @@
 
 namespace EasyJiGuang\JMessage;
 
+use EasyJiGuang\Kernel\Exceptions\InvalidConfigException;
 use EasyJiGuang\Kernel\Support\BaseClient;
+use GuzzleHttp\Exception\GuzzleException;
 
 class Client extends BaseClient
 {
@@ -22,8 +24,10 @@ class Client extends BaseClient
     /**
      * 发送文本验证码短信 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $options
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function text(array $options)
     {
@@ -35,8 +39,10 @@ class Client extends BaseClient
     /**
      * 发送语音验证码短信 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $options
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function voice(array $options)
     {
@@ -48,8 +54,11 @@ class Client extends BaseClient
     /**
      * 验证码验证 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param string $msg_id
+     * @param string $code
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function validator(string $msg_id, string $code)
     {
@@ -61,8 +70,10 @@ class Client extends BaseClient
     /**
      * 发送单条模板短信 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $options
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function messages(array $options)
     {
@@ -74,8 +85,10 @@ class Client extends BaseClient
     /**
      * 发送批量模板短信 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $options
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function batchMessages(array $options)
     {
@@ -87,8 +100,10 @@ class Client extends BaseClient
     /**
      * 单条定时短信提交 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $options
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function schedule(array $options)
     {
@@ -100,8 +115,10 @@ class Client extends BaseClient
     /**
      * 批量定时短信提交 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $options
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function batchSchedule(array $options)
     {
@@ -113,8 +130,11 @@ class Client extends BaseClient
     /**
      * 单条定时短信修改 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param string $schedule_id
+     * @param array  $options
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function updateSchedule(string $schedule_id, array $options)
     {
@@ -126,8 +146,11 @@ class Client extends BaseClient
     /**
      * 批量定时短信修改 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param string $schedule_id
+     * @param array  $options
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function updateBatchSchedule(string $schedule_id, array $options)
     {
@@ -139,8 +162,10 @@ class Client extends BaseClient
     /**
      * 定时短信查询API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param string $schedule_id
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function get(string $schedule_id)
     {
@@ -152,8 +177,10 @@ class Client extends BaseClient
     /**
      * 定时短信删除 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param string $schedule_id
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      */
     public function delete(string $schedule_id)
     {

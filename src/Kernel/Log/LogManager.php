@@ -14,6 +14,7 @@ namespace EasyJiGuang\Kernel\Log;
 use EasyJiGuang\Kernel\ServiceContainer;
 use Exception;
 use InvalidArgumentException;
+use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\FormattableHandlerInterface;
@@ -33,7 +34,7 @@ use Throwable;
 class LogManager implements LoggerInterface
 {
     /**
-     * @var \EasyJiGuang\Kernel\ServiceContainer
+     * @var ServiceContainer
      */
     protected $app;
 
@@ -80,9 +81,9 @@ class LogManager implements LoggerInterface
      *
      * @param string|null $channel
      *
-     * @throws Exception
+     *@throws Exception
      *
-     * @return \Psr\Log\LoggerInterface
+     * @return LoggerInterface
      */
     public function stack(array $channels, string $channel = null)
     {
@@ -108,9 +109,9 @@ class LogManager implements LoggerInterface
      *
      * @param string|null $driver
      *
-     * @throws Exception
+     *@throws Exception
      *
-     * @return mixed
+     * @return LoggerInterface|Monolog
      */
     public function driver(string $driver = null)
     {
@@ -122,9 +123,9 @@ class LogManager implements LoggerInterface
      *
      * @param string $name
      *
-     * @throws Exception
+     *@throws Exception
      *
-     * @return \Psr\Log\LoggerInterface
+     * @return LoggerInterface
      */
     protected function get(string $name)
     {
@@ -146,9 +147,9 @@ class LogManager implements LoggerInterface
      *
      * @param string $name
      *
-     * @throws InvalidArgumentException
+     *@throws InvalidArgumentException
      *
-     * @return \Psr\Log\LoggerInterface
+     * @return LoggerInterface
      */
     protected function resolve(string $name): LoggerInterface
     {
@@ -174,7 +175,7 @@ class LogManager implements LoggerInterface
     /**
      * Create an emergency log handler to avoid white screens of death.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     protected function createEmergencyLogger(): Monolog
     {
@@ -186,6 +187,8 @@ class LogManager implements LoggerInterface
 
     /**
      * Call a custom driver creator.
+     *
+     * @param array $config
      *
      * @return mixed
      */
@@ -201,7 +204,7 @@ class LogManager implements LoggerInterface
      *
      * @throws Exception
      *
-     * @return \Monolog\Logger
+     * @return Monolog
      */
     protected function createStackDriver(array $config): Monolog
     {
@@ -221,9 +224,9 @@ class LogManager implements LoggerInterface
     /**
      * Create an instance of the single file log driver.
      *
-     * @throws \Exception
+     * @param array $config
      *
-     * @return \Psr\Log\LoggerInterface
+     * @return LoggerInterface
      */
     protected function createSingleDriver(array $config)
     {
@@ -241,7 +244,9 @@ class LogManager implements LoggerInterface
     /**
      * Create an instance of the daily file log driver.
      *
-     * @return \Psr\Log\LoggerInterface
+     * @param array $config
+     *
+     * @return LoggerInterface
      */
     protected function createDailyDriver(array $config)
     {
@@ -260,7 +265,9 @@ class LogManager implements LoggerInterface
     /**
      * Create an instance of the Slack log driver.
      *
-     * @return \Psr\Log\LoggerInterface
+     * @param array $config
+     *
+     * @return LoggerInterface
      */
     protected function createSlackDriver(array $config)
     {
@@ -283,7 +290,9 @@ class LogManager implements LoggerInterface
     /**
      * Create an instance of the syslog log driver.
      *
-     * @return \Psr\Log\LoggerInterface
+     * @param array $config
+     *
+     * @return LoggerInterface
      */
     protected function createSyslogDriver(array $config)
     {
@@ -299,7 +308,9 @@ class LogManager implements LoggerInterface
     /**
      * Create an instance of the "error log" log driver.
      *
-     * @return \Psr\Log\LoggerInterface
+     * @param array $config
+     *
+     * @return LoggerInterface
      */
     protected function createErrorlogDriver(array $config)
     {
@@ -332,7 +343,7 @@ class LogManager implements LoggerInterface
     /**
      * Prepare the handler for usage by Monolog.
      *
-     * @return \Monolog\Handler\HandlerInterface
+     * @return HandlerInterface
      */
     protected function prepareHandler(HandlerInterface $handler, array $config = [])
     {
@@ -348,7 +359,7 @@ class LogManager implements LoggerInterface
     /**
      * Get a Monolog formatter instance.
      *
-     * @return \Monolog\Formatter\FormatterInterface
+     * @return FormatterInterface
      */
     protected function formatter()
     {
@@ -427,6 +438,7 @@ class LogManager implements LoggerInterface
      * System is unusable.
      *
      * @param string $message
+     * @param array  $context
      *
      * @throws Exception
      *
@@ -444,8 +456,9 @@ class LogManager implements LoggerInterface
      * trigger the SMS alerts and wake you up.
      *
      * @param string $message
+     * @param array  $context
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @return mixed
      */
@@ -461,7 +474,7 @@ class LogManager implements LoggerInterface
      *
      * @param string $message
      *
-     * @throws \Exception
+     *@throws Exception
      *
      * @return mixed
      */
@@ -476,7 +489,7 @@ class LogManager implements LoggerInterface
      *
      * @param string $message
      *
-     * @throws \Exception
+     *@throws Exception
      *
      * @return mixed
      */
@@ -493,7 +506,7 @@ class LogManager implements LoggerInterface
      *
      * @param string $message
      *
-     * @throws \Exception
+     *@throws Exception
      *
      * @return mixed
      */
@@ -507,7 +520,7 @@ class LogManager implements LoggerInterface
      *
      * @param string $message
      *
-     * @throws \Exception
+     *@throws Exception
      *
      * @return mixed
      */
@@ -523,7 +536,7 @@ class LogManager implements LoggerInterface
      *
      * @param string $message
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @return mixed
      */
@@ -537,7 +550,7 @@ class LogManager implements LoggerInterface
      *
      * @param string $message
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @return mixed
      */
@@ -552,7 +565,7 @@ class LogManager implements LoggerInterface
      * @param mixed  $level
      * @param string $message
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @return mixed
      */

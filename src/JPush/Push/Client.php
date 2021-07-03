@@ -11,8 +11,11 @@
 
 namespace EasyJiGuang\JPush\Push;
 
+use EasyJiGuang\Kernel\Exceptions\InvalidConfigException;
 use EasyJiGuang\Kernel\Support\BaseClient;
+use EasyJiGuang\Kernel\Support\Collection;
 use GuzzleHttp\Exception\GuzzleException;
+use Psr\Http\Message\ResponseInterface;
 
 class Client extends BaseClient
 {
@@ -25,12 +28,12 @@ class Client extends BaseClient
      *
      * @param array $options
      *
+     * @throws InvalidConfigException
      * @throws GuzzleException
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function message(array $options): \Psr\Http\Message\ResponseInterface
+    public function message(array $options): ResponseInterface
     {
         $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, 'push');
 
@@ -40,10 +43,10 @@ class Client extends BaseClient
     /**
      * 推送唯一标识符.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function getCid(array $query)
     {
@@ -59,10 +62,10 @@ class Client extends BaseClient
     /**
      * 推送校验 API.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function validate(array $options)
     {
@@ -74,10 +77,10 @@ class Client extends BaseClient
     /**
      * 批量单推  针对的是RegID方式批量单推.
      *
+     * @throws InvalidConfigException
      * @throws GuzzleException
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function batchRegidSingle(array $options)
     {
@@ -89,10 +92,10 @@ class Client extends BaseClient
     /**
      * 针对的是Alias方式批量单推.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function batchAliasSingle(array $options)
     {
@@ -104,16 +107,16 @@ class Client extends BaseClient
     /**
      * 推送撤销
      *
-     * @param $msgid
+     * @param $msgID
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
-    public function revoke($msgid)
+    public function revoke($msgID)
     {
-        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, 'push/'.$msgid);
+        $url = $this->buildEndpoint(self::ENDPOINT_TEMPLATE, 'push/'.$msgID);
 
         return $this->httpDelete($url, $this->getHeader());
     }
@@ -121,10 +124,10 @@ class Client extends BaseClient
     /**
      * 文件推送
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function file(array $options)
     {
@@ -136,10 +139,10 @@ class Client extends BaseClient
     /**
      * Group Push API：应用分组推送
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function groupPush(array $options)
     {
@@ -151,10 +154,10 @@ class Client extends BaseClient
     /**
      * 应用分组文件推送（VIP专属接口）.
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function groupPushFile(array $options)
     {

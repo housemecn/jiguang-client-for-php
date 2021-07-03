@@ -11,7 +11,11 @@
 
 namespace EasyJiGuang\JPush\Schedule;
 
+use EasyJiGuang\Kernel\Exceptions\InvalidConfigException;
 use EasyJiGuang\Kernel\Support\BaseClient;
+use EasyJiGuang\Kernel\Support\Collection;
+use GuzzleHttp\Exception\GuzzleException;
+use Psr\Http\Message\ResponseInterface;
 
 class Client extends BaseClient
 {
@@ -24,10 +28,10 @@ class Client extends BaseClient
      *
      * @param $options
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function addSchedules($options)
     {
@@ -40,10 +44,10 @@ class Client extends BaseClient
      * @param int         $page
      * @param array|int[] $query
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function getSchedules(int $page = 1, array $query = ['page' => $page])
     {
@@ -55,10 +59,10 @@ class Client extends BaseClient
      *
      * @param $schedule_id
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function getSchedulesById($schedule_id)
     {
@@ -72,10 +76,10 @@ class Client extends BaseClient
      *
      * @param $schedule_id
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function getMsgId($schedule_id)
     {
@@ -90,10 +94,10 @@ class Client extends BaseClient
      * @param $schedule_id
      * @param $options
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function updateSchedules($schedule_id, $options)
     {
@@ -107,10 +111,10 @@ class Client extends BaseClient
      *
      * @param $schedule_id
      *
-     * @throws \EasyJiGuang\Kernel\Exceptions\InvalidConfigException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
+     * @throws InvalidConfigException
      *
-     * @return array|\EasyJiGuang\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @return array|Collection|object|ResponseInterface|string
      */
     public function deleteSchedules($schedule_id)
     {
