@@ -1,12 +1,12 @@
-<h1 align="center"> JIGuang Push</h1>
+<h1 align="center"> JiGuang Push</h1>
 
 <p align="center"> 极光 API Server SDK for PHP.</p>
 
 
-[![Latest Stable Version](https://poser.pugx.org/hedeqiang/easyjiguang/v)](//packagist.org/packages/hedeqiang/easyjiguang)
-[![Total Downloads](https://poser.pugx.org/hedeqiang/easyjiguang/downloads)](//packagist.org/packages/hedeqiang/easyjiguang)
-[![Latest Unstable Version](https://poser.pugx.org/hedeqiang/easyjiguang/v/unstable)](//packagist.org/packages/hedeqiang/easyjiguang)
-[![License](https://poser.pugx.org/hedeqiang/easyjiguang/license)](//packagist.org/packages/hedeqiang/easyjiguang)
+[![Latest Stable Version](https://poser.pugx.org/houseme/easyjiguang/v)](//packagist.org/packages/houseme/easyjiguang)
+[![Total Downloads](https://poser.pugx.org/houseme/easyjiguang/downloads)](//packagist.org/packages/houseme/easyjiguang)
+[![Latest Unstable Version](https://poser.pugx.org/houseme/easyjiguang/v/unstable)](//packagist.org/packages/houseme/easyjiguang)
+[![License](https://poser.pugx.org/houseme/easyjiguang/license)](//packagist.org/packages/houseme/easyjiguang)
 
 > 如需友盟推送 请前往 [友盟推送](https://github.com/hedeqiang/UMeng-Push)
 
@@ -23,7 +23,7 @@
 ## Installing
 
 ```shell
-$ composer require hedeqiang/easyjiguang -vvv
+$ composer require houseme/easyjiguang -vvv
 ```
 
 ## Usage
@@ -427,8 +427,8 @@ EasyJiGuang::JVerify()->verify->verify();
 
 You can contribute in one of three ways:
 
-1. File bug reports using the [issue tracker](https://github.com/hedeqiang/easyjiguang/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/hedeqiang/easyjiguang/issues).
+1. File bug reports using the [issue tracker](https://github.com/housemecn/jiguang-client-for-php/issues).
+2. Answer questions or fix bugs on the [issue tracker](https://github.com/housemecn/jiguang-client-for-php/issues).
 3. Contribute new features or update the wiki.
 
 _The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and

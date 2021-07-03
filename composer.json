@@ -1,5 +1,5 @@
 {
-    "name": "hedeqiang/easyjiguang",
+    "name": "houseme/easyjiguang",
     "description": "极光 API Server SDK for PHP",
     "keywords": [
         "jiguang",
@@ -29,6 +29,10 @@
         "ext-curl": "*",
         "ext-simplexml": "*",
         "ext-libxml": "*"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
