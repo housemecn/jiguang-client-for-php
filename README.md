@@ -1,14 +1,12 @@
 # JiGuang Push
 
 ### 极光 API Server SDK for PHP.
-
+### 包括极光推送（JPush）、极光魔链（JMLink）、极光短信（JSMS）、极光认证（JVerification）等相关开源项目。
 
 [![Latest Stable Version](https://poser.pugx.org/houseme/easyjiguang/v)](//packagist.org/packages/houseme/easyjiguang)
 [![Total Downloads](https://poser.pugx.org/houseme/easyjiguang/downloads)](//packagist.org/packages/houseme/easyjiguang)
 [![Latest Unstable Version](https://poser.pugx.org/houseme/easyjiguang/v/unstable)](//packagist.org/packages/houseme/easyjiguang)
 [![License](https://poser.pugx.org/houseme/easyjiguang/license)](//packagist.org/packages/houseme/easyjiguang)
-[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/houseme/easyjiguang)](//packagist.org/packages/houseme/easyjiguang)
-[![Packagist Version](https://img.shields.io/packagist/v/houseme/easyjiguang)](//packagist.org/packages/houseme/easyjiguang)
 
 
 

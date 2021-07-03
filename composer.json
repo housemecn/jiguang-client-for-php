@@ -6,7 +6,11 @@
         "push",
         "verify",
         "sms",
-        "link"
+        "link",
+        "JMLink",
+        "JVerification",
+        "JPush",
+        "JSMS"
     ],
     "license": "MIT",
     "authors": [
