@@ -1,8 +1,8 @@
 <?php
 $header = <<<EOF
-This file is part of the hedeqiang/jpush.
+This file is part of the houseme/jpush.
 
-(c) hedeqiang <laravel_code@163.com>
+(c) houseme <houseme@outlook.com>
 
 This source file is subject to the MIT license that is bundled.
 EOF;
